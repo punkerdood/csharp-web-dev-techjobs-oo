@@ -12,7 +12,10 @@ namespace TechJobsOO
             Id = nextId;
             nextId++;
         }
-
+        public override string ToString()
+        {
+            return Value;
+        }
         public PositionType(string value) : this()
         {
             Value = value;
