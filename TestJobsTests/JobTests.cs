@@ -30,8 +30,8 @@ namespace TestJobsTests
         
         public void TestJobsForEquality()
         {
-            Job testCase1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
-            Job testCase2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
+            Job testCase1 = new Job("Product tester", new Employer("ACM"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
+            Job testCase2 = new Job("Product tester", new Employer("AME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
             Assert.IsFalse(testCase2.Equals(testCase1));
             
          
@@ -41,7 +41,7 @@ namespace TestJobsTests
         
         public void ToStringTest()
         {
-            Job testCase = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
+            Job testCase = new Job("Product tester", new Employer("AA"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
             string test = testCase.ToString();
             Assert.IsTrue(test.StartsWith("\n"));
             Assert.IsTrue(test.EndsWith("\n"));
@@ -53,3 +53,19 @@ namespace TestJobsTests
         }
     }
 }
+
+
+/*string _s = base.ToString();
+            foreach(char letter in _s)
+            {
+                if (letter.Equals(":"))
+                {
+                    int placeHolder = _s.IndexOf(letter) + 1;
+                    if (_s[placeHolder].Equals("\n")){
+                        
+                    }
+                    {
+
+                    }
+                }
+            }*/

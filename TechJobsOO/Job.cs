@@ -44,13 +44,14 @@ namespace TechJobsOO
         }
 
         public override string ToString()
-        {
-            base.ToString().Replace("Data not available", "");
-            //return "\n" + base.ToString() + "\n";
-            return "\n" + "ID: " + Id + "\nName: " + Name + "\nEmployer: " + EmployerName + "\nLocation: " + EmployerLocation + "\nPosition Type: " + JobType + "\nCore Competency: " + JobCoreCompetency + "\n";
+        { 
+            string s = "\n" + "Id: " + Id + "\nName: " + Name + "\nEmployer: " + EmployerName + "\nLocation: " + EmployerLocation + "\nPosition Type: " + JobType + "\nCore Competency: " + JobCoreCompetency + "\n";
+            s = s.Replace(": \n", ": Data not available\n");
+            return s;
 
 
-       } }
+        }
+    }
     // TODO: Generate Equals() and GetHashCode() methods.
     public abstract class JobField
     {
