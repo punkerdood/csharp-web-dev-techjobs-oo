@@ -27,13 +27,29 @@ namespace TestJobsTests
         }
         [TestMethod]
         
+        
         public void TestJobsForEquality()
         {
             Job testCase1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
             Job testCase2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
             Assert.IsFalse(testCase2.Equals(testCase1));
-
-
+            
+         
+            
+        }
+        [TestMethod]
+        
+        public void ToStringTest()
+        {
+            Job testCase = new Job("Product tester", new Employer(""), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistance"));
+            string test = testCase.ToString();
+            Assert.IsTrue(test.StartsWith("\n"));
+            Assert.IsTrue(test.EndsWith("\n"));
+            Assert.IsTrue(test.Contains("\nName: " + testCase.Name));
+            Assert.IsTrue(test.Contains("\nEmployer: " + testCase.EmployerName));
+            Assert.IsTrue(test.Contains("\nLocation: " + testCase.EmployerLocation));
+            Assert.IsTrue(test.Contains("\nPosition Type: " + testCase.JobType));
+            Assert.IsTrue(test.Contains("\nCore Competency: " + testCase.JobCoreCompetency));
         }
     }
 }
