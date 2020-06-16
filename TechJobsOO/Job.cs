@@ -18,12 +18,12 @@ namespace TechJobsOO
         public CoreCompetency JobCoreCompetency { get; set; }
 
         // TODO: Add the two necessary constructors.
-    public Job()
+        public Job()
         {
             Id = nextId;
             nextId++;
         }
-    public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency) : this()
         {
             Name = name;
             EmployerName = employerName;
@@ -44,7 +44,7 @@ namespace TechJobsOO
         }
 
         public override string ToString()
-        { 
+        {
             string s = "\n" + "Id: " + Id + "\nName: " + Name + "\nEmployer: " + EmployerName + "\nLocation: " + EmployerLocation + "\nPosition Type: " + JobType + "\nCore Competency: " + JobCoreCompetency + "\n";
             s = s.Replace(": \n", ": Data not available\n");
             return s;
@@ -52,6 +52,7 @@ namespace TechJobsOO
 
         }
     }
+}
     // TODO: Generate Equals() and GetHashCode() methods.
   
 
